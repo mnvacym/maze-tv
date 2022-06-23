@@ -1,0 +1,35 @@
+{
+  "plugins": {
+    "posthtml-attrs-sorter": {
+      "order": [
+        "app.+",
+        "mat-.+",
+        "#.+",
+        "\\*ng.+",
+        "\\[ng.+",
+        "\\[attr.+",
+        "\\[.+",
+        "\\(.+",
+        "\\attr.+",
+        "color",
+        "formControlName",
+        "name",
+        "type",
+        "id",
+        "class",
+        "data-.+",
+        "src",
+        "for",
+        "rel",
+        "href",
+        "values",
+        "title",
+        "alt",
+        "role",
+        "aria-.+",
+        "miTag.+",
+        "$unknown$"
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+$layout--baseline-grid: 8px !default;
+
+/*
+ Responsive width
+ Breakpoints at:
+ - 600px
+ - 768px
+ - 960px
+ - 1280px
+*/
+
+@mixin larger-than-xs {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin larger-than-sm {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin larger-than-md {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+
+@mixin larger-than-lg {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+/*
+ Grid layout, specifically for margin and padding (Multiply value 1 to 30)
+ Not to be used for widths and heights
+*/
+@mixin gridValues {
+  @for $i from 1 through 30 {
+    --layout--grd-#{$i}: #{8 * $i}px;
+  }
+}

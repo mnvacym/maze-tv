@@ -1,0 +1,17 @@
+{
+  "doctype-first": false,
+  "tagname-lowercase": false,
+  "attr-lowercase": false,
+  "spec-char-escape": false,
+
+  "attr-value-double-quotes": false,
+  "id-unique": false,
+  "src-not-empty": false,
+  "attr-no-duplication": true,
+  "title-require": false,
+  "empty-tag-not-self-closed": false,
+
+  "ot-anchor-noopener": true,
+  "ot-button-type": true,
+  "ot-img-alt-require": true
+}
