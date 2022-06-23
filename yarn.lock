@@ -249,6 +249,13 @@
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-12.2.16.tgz#f470a7884acec6080489300079feb6c316a01e00"
   integrity sha512-eDOd46Lu+4Nc/UA9q4G1xUTeIT2JXDdpedSRCk1fM+trYUZm7Xy2FZasP3pUSdtz04wt0kV9Mi5i3oCxfqU2Wg==
 
+"@angular/material@^14.0.3":
+  version "14.0.3"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-14.0.3.tgz#73aa8cb75ea924595b049487892efa9d9d59df0a"
+  integrity sha512-xtYV5ygkfl/6JUaI99NeD1AdM4WcCrCOsx/5IR3ZohUQ1q9vPPvcArWa9QAa1GgU7HNhkgXU90yELwsOtSTc4w==
+  dependencies:
+    tslib "^2.3.0"
+
 "@angular/platform-browser-dynamic@^12.2.0":
   version "12.2.16"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-12.2.16.tgz#06adbf7a4dd3dfbc0baff5ed905ca4de70fb91cb"

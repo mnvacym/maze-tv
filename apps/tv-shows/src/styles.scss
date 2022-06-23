@@ -1,7 +1,38 @@
 @import './assets/scss/mixin';
+@import './assets/scss/theme';
 
 :root {
   @include gridValues();
+  --text-color-light: #{$textLight};
+  --text-color-medium: #{$textMedium};
+  --text-color-dark: #{$textDark};
+  --primary-color: #{$primaryColor};
+  --accent-color: #{$accentColor};
+  --background-color: #{$backgroundColor};
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+::-webkit-scrollbar-track {
+  border: none;
+  background: $scrollBarTrackColor;
+}
+
+::-webkit-scrollbar-thumb {
+  border: none;
+  background: $scrollBarThumbColor;
+
+  &:hover,
+  &:active {
+    background: $scrollBarThumbActiveColor;
+  }
 }
 
 html,
@@ -10,4 +41,32 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: var(--background-color);
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ul {
+  list-style: none;
+  li {
+    list-style: none;
+  }
 }

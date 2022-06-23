@@ -21,7 +21,10 @@
               "apps/tv-shows/src/favicon.ico",
               "apps/tv-shows/src/assets"
             ],
-            "styles": ["apps/tv-shows/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "apps/tv-shows/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {

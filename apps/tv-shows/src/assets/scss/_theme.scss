@@ -1,0 +1,62 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$primaryColor: #e91e63;
+$accentColor: #607d8b;
+$backgroundColor: #607d8b54;
+$textLight: #f8f8f8;
+$textMedium: #54595d;
+$textDark: #12151b;
+$scrollBarTrackColor: #e1e1e1;
+$scrollBarThumbColor: #363636;
+$scrollBarThumbActiveColor: #636363;
+
+@function convertToMaterialPalette($color) {
+  @return (
+    50: lighten($color, 52),
+    100: lighten($color, 37),
+    200: lighten($color, 26),
+    300: lighten($color, 12),
+    400: lighten($color, 6),
+    500: $color,
+    600: darken($color, 6),
+    700: darken($color, 12),
+    800: darken($color, 18),
+    900: darken($color, 24),
+    A100: saturate(lighten($color, 50), 30),
+    A200: saturate(lighten($color, 30), 30),
+    A400: saturate(lighten($color, 10), 15),
+    A700: saturate(lighten($color, 5), 5),
+    contrast: (
+      50: $textDark,
+      100: $textDark,
+      200: $textDark,
+      300: $textDark,
+      400: $textDark,
+      500: $textLight,
+      600: $textLight,
+      700: $textLight,
+      800: $textLight,
+      900: $textLight,
+      A100: $textDark,
+      A200: $textDark,
+      A400: $textDark,
+      A700: $textDark
+    )
+  );
+}
+
+$mazeAppPrimary: convertToMaterialPalette($primaryColor);
+
+$mazeAppAccent: convertToMaterialPalette($accentColor);
+
+$mazeAppPrimaryPalette: mat-palette($mazeAppPrimary);
+$mazeAppAccentPalette: mat-palette($mazeAppAccent);
+
+$maze-app-theme: mat-light-theme($mazeAppPrimaryPalette, $mazeAppAccentPalette);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($maze-app-theme);
