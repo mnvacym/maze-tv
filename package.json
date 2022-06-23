@@ -11,7 +11,7 @@
     "prepare": "husky install",
     "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
     "start": "nx serve",
-    "test": "nx test"
+    "test": "nx test --verbose --coverage"
   },
   "private": true,
   "dependencies": {
