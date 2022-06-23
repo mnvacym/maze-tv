@@ -124,7 +124,7 @@
   },
   "cli": {
     "defaultCollection": "@nrwl/angular",
-    "packageManager": "npm"
+    "packageManager": "yarn"
   },
   "schematics": {
     "@nrwl/angular": {

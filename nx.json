@@ -12,9 +12,15 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
+        "accessToken": "NTcyNDQ0ZDUtYzUzNS00ZDYzLTlmYTQtZWUwOTU2YWUzMDFkfHJlYWQtd3JpdGU="
       }
     }
   },
@@ -32,7 +38,9 @@
     },
     "tv-shows-e2e": {
       "tags": [],
-      "implicitDependencies": ["tv-shows"]
+      "implicitDependencies": [
+        "tv-shows"
+      ]
     }
   }
 }
