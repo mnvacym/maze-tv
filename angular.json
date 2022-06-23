@@ -2,6 +2,7 @@
   "version": 1,
   "projects": {
     "tv-shows": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "projectType": "application",
       "root": "apps/tv-shows",
       "sourceRoot": "apps/tv-shows/src",
@@ -91,13 +92,15 @@
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/tv-shows"],
           "options": {
-            "jestConfig": "apps/tv-shows/jest.config.js",
+            "jestConfig": "apps/tv-shows/jest.config.ts",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "tv-shows-e2e": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/tv-shows-e2e",
       "sourceRoot": "apps/tv-shows-e2e/src",
       "projectType": "application",
@@ -122,39 +125,9 @@
             "lintFilePatterns": ["apps/tv-shows-e2e/**/*.{js,ts}"]
           }
         }
-      }
-    }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular",
-    "packageManager": "yarn"
-  },
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
       },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
+      "tags": [],
+      "implicitDependencies": ["tv-shows"]
     }
-  },
-  "defaultProject": "tv-shows"
+  }
 }
