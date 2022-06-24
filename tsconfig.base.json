@@ -17,6 +17,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@maze-tv/data-access": ["libs/shared/data-access/src/index.ts"],
       "@maze-tv/landing": ["libs/landing/src/index.ts"]
     }
   },
