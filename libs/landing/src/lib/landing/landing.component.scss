@@ -1,0 +1,42 @@
+@import 'mixin';
+
+.landing-page-container {
+  margin: 0 auto;
+  padding: var(--layout--grd-4);
+
+  @include larger-than-xs() {
+    width: 80%;
+  }
+}
+
+.genre {
+  margin-bottom: var(--layout--grd-8);
+
+  &__title {
+    margin-bottom: var(--layout--grd-2);
+  }
+
+  &__shows {
+    display: flex;
+    overflow: scroll;
+  }
+}
+
+.tv-show-card {
+  flex-basis: 370px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: var(--layout--grd-2);
+  padding-bottom: 0;
+  transform: scale3d(1, 1, 1);
+  transition: transform 0.2s;
+  cursor: pointer;
+
+  &__image {
+    aspect-ratio: 0.7;
+  }
+}
+
+.tv-show-card:hover {
+  transform: scale3d(0.95, 0.95, 0.95);
+}

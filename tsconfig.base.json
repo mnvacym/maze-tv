@@ -17,8 +17,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@maze-tv/data-access": ["libs/shared/data-access/src/index.ts"],
-      "@maze-tv/landing": ["libs/landing/src/index.ts"]
+      "@maze-tv/landing": ["libs/landing/src/index.ts"],
+      "@maze-tv/shared/data-access": ["libs/shared/data-access/src/index.ts"],
+      "@maze-tv/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@maze-tv/shared/utils": ["libs/shared/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

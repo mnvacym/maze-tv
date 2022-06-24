@@ -61,7 +61,24 @@ export interface Links {
   self: {
     href: string;
   };
-  previousepisode: {
+  previousepisode?: {
     href: string;
   };
+}
+
+export interface Episode {
+  id: number;
+  url: string;
+  name: string;
+  season: number;
+  number: number;
+  type: string;
+  airdate: string;
+  airtime: string;
+  airstamp: string;
+  runtime: number;
+  rating: Rating;
+  image: Image;
+  summary: string;
+  _links: Links;
 }

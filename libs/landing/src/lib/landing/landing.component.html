@@ -1,1 +1,25 @@
-<p>landing works!</p>
+<div class="landing-page-container">
+  <div *ngFor="let genre of genres$ | async" class="genre">
+    <h2 class="genre__title">{{ genre }}</h2>
+    <div class="genre__shows">
+      <mat-card
+        *ngFor="let show of tvShows$ | async | filterByGenre: genre"
+        class="tv-show-card"
+      >
+        <mat-card-header>
+          <mat-card-title>{{ show.name }}</mat-card-title>
+          <mat-card-subtitle
+            >Rate: {{ show.rating.average }} / 10</mat-card-subtitle
+          >
+        </mat-card-header>
+        <img
+          mat-card-image
+          [src]="show.image.original"
+          loading="lazy"
+          class="tv-show-card__image"
+          alt="Image of the show"
+        />
+      </mat-card>
+    </div>
+  </div>
+</div>

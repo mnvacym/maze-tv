@@ -47,11 +47,12 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
 }
 
 body {
   min-height: 100vh;
+  background-color: var(--background-color);
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 a {
