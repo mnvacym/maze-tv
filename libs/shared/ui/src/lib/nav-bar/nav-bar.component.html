@@ -1,0 +1,28 @@
+<mat-toolbar class="navbar">
+  <button mat-icon-button (click)="sidenav.toggle()" class="navbar__menu-buton">
+    <mat-icon color="primary">menu</mat-icon>
+  </button>
+  <img
+    src="https://static.tvmaze.com/images/tvm-header-logo.png"
+    alt="logo"
+    class="navbar__logo"
+  />
+  <a mat-button color="primary" [routerLink]="'/'" class="navbar__home-buton"
+    >Home</a
+  >
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav
+    #sidenav
+    opened="false"
+    (click)="sidenav.close()"
+    class="sidenav"
+  >
+    <mat-nav-list class="mat-nav-list">
+      <a mat-list-item color="primary" [routerLink]="'/'">Home</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
