@@ -5,7 +5,7 @@ import {
 import { InjectionToken } from '@angular/core';
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
 import { EnvironmentConfig, ENV_CONFIG } from '../env-config';
-import { TvShow } from '../types';
+import { Actor, Episode, Season, TvShow } from '../types';
 import { TvShowsService } from './tv-shows.service';
 
 describe('TvShowsService', () => {
@@ -54,6 +54,86 @@ describe('TvShowsService', () => {
       });
       const request = controller.expectOne('http://some-api-url');
       request.flush(mockTvShows);
+    });
+  });
+
+  describe('Method: getTvShowById', () => {
+    it('should return correct data with httpClient', () => {
+      // Assemble
+      spectator.service.apiUrl = 'http://some-api-url';
+      const mockTvShow = { name: 'foo' } as unknown as TvShow;
+
+      // Act
+      const tvShow$ = spectator.service.getTvShowById(2);
+
+      // Assert
+      tvShow$.subscribe(show => {
+        expect(show).toEqual(mockTvShow);
+      });
+      const request = controller.expectOne('http://some-api-url/2');
+      request.flush(mockTvShow);
+    });
+  });
+
+  describe('Method: getSeasonsByTvShow', () => {
+    it('should return correct data with httpClient', () => {
+      // Assemble
+      spectator.service.apiUrl = 'http://some-api-url';
+      const mockSeasons = [{ name: 1 }, { name: 2 }] as unknown as Season[];
+
+      // Act
+      const seasons$ = spectator.service.getSeasonsByTvShow(2);
+
+      // Assert
+      seasons$.subscribe(seasons => {
+        expect(seasons).toEqual(mockSeasons);
+      });
+      const request = controller.expectOne('http://some-api-url/2/seasons');
+      request.flush(mockSeasons);
+    });
+  });
+
+  describe('Method: getEpisodesByTvShow', () => {
+    it('should return correct data with httpClient', () => {
+      // Assemble
+      spectator.service.apiUrl = 'http://some-api-url';
+      const mockEpisodes = [
+        { name: 'foo' },
+        { name: 'bar' }
+      ] as unknown as Episode[];
+
+      // Act
+      const episodes$ = spectator.service.getEpisodesByTvShow(2);
+
+      // Assert
+      episodes$.subscribe(episodes => {
+        expect(episodes).toEqual(mockEpisodes);
+      });
+      const request = controller.expectOne('http://some-api-url/2/episodes');
+      request.flush(mockEpisodes);
+    });
+  });
+
+  describe('Method: getCastByTvShow', () => {
+    it('should return correct data with httpClient', () => {
+      // Assemble
+      spectator.service.apiUrl = 'http://some-api-url';
+      const mockCast = [
+        {
+          person: { name: 'Jack' },
+          character: { name: 'John' }
+        }
+      ] as unknown as Actor[];
+
+      // Act
+      const cast$ = spectator.service.getCastByTvShow(2);
+
+      // Assert
+      cast$.subscribe(cast => {
+        expect(cast).toEqual(mockCast);
+      });
+      const request = controller.expectOne('http://some-api-url/2/cast');
+      request.flush(mockCast);
     });
   });
 

@@ -13,6 +13,11 @@ const routes: Routes = [
       import('@maze-tv/landing').then(module => module.LandingModule)
   },
   {
+    path: 'show-details',
+    loadChildren: () =>
+      import('@maze-tv/show-details').then(module => module.ShowDetailsModule)
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('@maze-tv/landing').then(module => module.LandingModule)

@@ -1,16 +1,7 @@
 @import '@angular/material/theming';
+@import './color';
 
 @include mat-core();
-
-$primaryColor: #e91e63;
-$accentColor: #607d8b;
-$backgroundColor: #607d8b54;
-$textLight: #f8f8f8;
-$textMedium: #54595d;
-$textDark: #12151b;
-$scrollBarTrackColor: #e1e1e1;
-$scrollBarThumbColor: #363636;
-$scrollBarThumbActiveColor: #636363;
 
 @function convertToMaterialPalette($color) {
   @return (
@@ -47,9 +38,9 @@ $scrollBarThumbActiveColor: #636363;
   );
 }
 
-$mazeAppPrimary: convertToMaterialPalette($primaryColor);
+$mazeAppPrimary: convertToMaterialPalette($color-primary);
 
-$mazeAppAccent: convertToMaterialPalette($accentColor);
+$mazeAppAccent: convertToMaterialPalette($color-accent);
 
 $mazeAppPrimaryPalette: mat-palette($mazeAppPrimary);
 $mazeAppAccentPalette: mat-palette($mazeAppAccent);

@@ -9,7 +9,16 @@ module.exports = {
     'scope-enum': [
       2,
       'always',
-      ['tv-shows', 'general', 'shared', 'landing', 'data-access', 'ui', 'utils']
+      [
+        'tv-shows',
+        'show-details',
+        'general',
+        'shared',
+        'landing',
+        'data-access',
+        'ui',
+        'utils'
+      ]
     ],
     'subject-case': [1, 'never', []],
     'subject-empty': [2, 'never'],

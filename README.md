@@ -15,8 +15,12 @@ To set a standardized consistent way of development, some helper tools such as `
 │   └── ...
 │
 ├── libs                    # All the libs live in libs directory
-│   ├──
-│   └── ...
+│   ├── landing
+│   ├── show-details
+│   └── shared
+│       ├── data-access
+│       ├── ui
+│       └── utils
 └── ...
 ```
 
@@ -24,6 +28,29 @@ To set a standardized consistent way of development, some helper tools such as `
 
 - After installing packages with `yarn` you can serve the app with `ng serve`.
 - To run unit tests run `yarn test`.
+
+## Some remarks about the architectural decisions
+
+- 🚀 I chose mono repo setup with Nx,
+  - Makes following DDD (Domain Driven Design) principles easier
+  - Better in case I need to add more apps to the same repo
+  - Nx provides computation caching, which makes builds and tests run much faster
+  - Uses Jest for unit testing
+- 🤓 I used yarn because it is slightly faster than npm
+- 🛡 Used htmlhint and added some rules, like preventing Reverse Tabnabbing etc.
+- 🚦 Used some helper linting and formatting tools to keep the quality of code and commits high
+- 🔨 Added github actions for a simple ci/cd pipeline
+- 💄 Created my own theme extending angular material theming, ans used Angular Material component library for a consistent look across the app
+- Mobile first approach is followed for better user experience
+- 🛫 I used spectator for a better unit testing experience
+- Used OnPush change detection strategy for components for a better performance
+- Created reusable pipes for filtering tv shows by genre and season
+
+## Understand the workspace
+
+- Run `yarn dep-graph` to see a diagram of the dependencies
+
+## Commit format
 
 There is a commit linter. Only certain commit formats will be accepted:
 
@@ -55,23 +82,3 @@ More Examples:
 References:
 
 - https://www.conventionalcommits.org/
-
-## Understand your workspace
-
-- Run `yarn dep-graph` to see a diagram of the dependencies of your projects.
-
-## Some remarks about the architectural decisions
-
-- 🚀 I chose mono repo setup with Nx,
-  - Makes following DDD (Domain Driven Design) principles easier
-  - Better in case I need to add more apps to the same repo
-  - Nx provides computation caching, which makes builds and tests run much faster
-  - Uses Jest for unit testing
-- 🤓 I used yarn because it is slightly faster than npm
-- 🛡 Used htmlhint and added some rules, like preventing Reverse Tabnabbing etc.
-- 🚦 Used some helper linting and formatting tools to keep the quality of code and commits high
-- 🔨 Added github actions for a simple ci/cd pipeline
-- 💄 Created my own theme extending angular material theming, ans used Angular Material component library for a consistent look across the app
-- 🛫 I used spectator for a better unit testing experience
-- Used OnPush change detection strategy for a better performance
--

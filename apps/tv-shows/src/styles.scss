@@ -1,14 +1,12 @@
 @import './assets/scss/mixin';
+@import './assets/scss/color';
+@import './assets/scss/color-shades';
 @import './assets/scss/theme';
 
 :root {
+  @extend %color-vars;
+  @extend %color-shade-vars;
   @include gridValues();
-  --text-color-light: #{$textLight};
-  --text-color-medium: #{$textMedium};
-  --text-color-dark: #{$textDark};
-  --primary-color: #{$primaryColor};
-  --accent-color: #{$accentColor};
-  --background-color: #{$backgroundColor};
 }
 
 // Custom scrollbar
@@ -51,18 +49,19 @@ body {
 
 body {
   min-height: 100vh;
-  background-color: var(--background-color);
+  background-color: var(--color-background);
+  color: var(--color-text-dark);
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--color-primary);
   text-decoration: none;
 
   &:link,
   &:visited,
   &:active {
-    color: var(--primary-color);
+    color: var(--color-primary);
     text-decoration: none;
   }
 
@@ -76,4 +75,13 @@ ul {
   li {
     list-style: none;
   }
+}
+
+/* Currently there is a bug with
+Angular material tab-group. mat-tab-group
+scrolls to top of page when tab index changes.
+This is a workaround while they're fixing it
+Reference: https://github.com/angular/components/issues/9592*/
+mat-tab-group {
+  min-height: 300px;
 }

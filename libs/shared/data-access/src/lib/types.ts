@@ -66,6 +66,21 @@ export interface Links {
   };
 }
 
+export interface Season {
+  id: number;
+  url: string;
+  number: number;
+  name: string;
+  episodeOrder: number;
+  premiereDate: string;
+  endDate: string;
+  network: Network;
+  webChannel?: null;
+  image: Image;
+  summary: string;
+  _links: Links;
+}
+
 export interface Episode {
   id: number;
   url: string;
@@ -81,4 +96,30 @@ export interface Episode {
   image: Image;
   summary: string;
   _links: Links;
+}
+
+export interface Person {
+  id: number;
+  url: string;
+  name: string;
+  country: Country;
+  birthday: string;
+  deathday?: null;
+  gender: string;
+  image: Image;
+  updated: number;
+  _links: Links;
+}
+
+export interface Character {
+  id: number;
+  url: string;
+  name: string;
+  image: Image;
+  _links: Links;
+}
+
+export interface Actor {
+  person: Person;
+  character: Character;
 }

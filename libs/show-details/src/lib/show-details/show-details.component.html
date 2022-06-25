@@ -1,0 +1,81 @@
+<ng-container *ngIf="tvShow$ | async as show">
+  <div class="details-page-container">
+    <div>
+      <img
+        [src]="show.image.original"
+        class="details__image"
+        alt="Cover image"
+      />
+      <h1 class="details__title">{{ show.name }}</h1>
+      <div class="details__meta-data">
+        <span *ngFor="let genre of show.genres" class="details__genre">{{
+          genre | titlecase
+        }}</span>
+        <span class="details__rating">Rating: {{ show.rating.average }}</span>
+        <span class="details__language">Language: {{ show.language }}</span>
+      </div>
+      <div [innerHTML]="show.summary" class="details__summary"></div>
+    </div>
+
+    <div class="details__tab-group">
+      <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="Seasons">
+          <div class="details__seasons-wrapper">
+            <div
+              *ngFor="let season of seasons$ | async"
+              class="details__season"
+            >
+              <h2>Season {{ season.number }}</h2>
+              <div class="details__episode-cards">
+                <mat-card
+                  *ngFor="
+                    let episode of episodes$
+                      | async
+                      | filterBySeason: season.number
+                  "
+                  class="episode-card"
+                >
+                  <mat-card-header>
+                    <mat-card-title
+                      >{{ episode.number }}. {{ episode.name }}</mat-card-title
+                    >
+                    <mat-card-subtitle
+                      >Rate: {{ episode.rating.average }} /
+                      10</mat-card-subtitle
+                    >
+                  </mat-card-header>
+                  <img
+                    mat-card-image
+                    [src]="episode.image.original"
+                    loading="lazy"
+                    class="episode-card__image"
+                    alt="Image of the episode"
+                  />
+                </mat-card>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Cast">
+          <div class="details__actor-cards">
+            <mat-card *ngFor="let actor of cast$ | async" class="actor-card">
+              <mat-card-header>
+                <mat-card-title>{{ actor.person.name }}</mat-card-title>
+                <mat-card-subtitle
+                  >as {{ actor.character.name }}</mat-card-subtitle
+                >
+              </mat-card-header>
+              <img
+                mat-card-image
+                [src]="actor.person.image.original"
+                loading="lazy"
+                class="actor-card__image"
+                alt="Image of the actor"
+              />
+            </mat-card>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</ng-container>

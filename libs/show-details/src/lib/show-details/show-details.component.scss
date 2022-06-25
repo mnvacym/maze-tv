@@ -1,0 +1,116 @@
+@import 'mixin';
+@import 'theme';
+
+.details-page-container {
+  margin: 0 auto;
+  padding: var(--layout--grd-4);
+
+  @include larger-than-xs() {
+    width: 80%;
+    padding: var(--layout--grd-8);
+  }
+}
+
+.details {
+  &__image {
+    width: 100%;
+    margin-bottom: var(--layout--grd-8);
+
+    @include larger-than-xs() {
+      width: 500px;
+      margin-right: var(--layout--grd-8);
+      float: left;
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--layout--grd-2);
+
+    @include larger-than-xs() {
+      margin-bottom: var(--layout--grd-4);
+    }
+  }
+
+  &__meta-data {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: var(--layout--grd-2);
+
+    @include larger-than-xs() {
+      margin-bottom: var(--layout--grd-4);
+    }
+  }
+
+  &__rating,
+  &__genre,
+  &__language {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: var(--layout--grd-2);
+    margin-bottom: var(--layout--grd-2);
+    padding: var(--layout--grd-1) var(--layout--grd-2);
+    border-radius: 4px;
+
+    @include larger-than-xs() {
+      font-size: 12px;
+    }
+  }
+
+  &__rating {
+    background-color: var(--color-success-lightest);
+    color: var(--color-success-darkest);
+  }
+
+  &__genre {
+    background-color: var(--color-warning-lightest);
+    color: var(--color-warning-darkest);
+  }
+
+  &__language {
+    background-color: var(--color-info-lightest);
+    color: var(--color-info-darkest);
+  }
+
+  &__summary {
+    margin-bottom: var(--layout--grd-8);
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    @include larger-than-xs() {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  &__tab-group {
+    clear: both;
+  }
+
+  &__seasons-wrapper {
+    margin-top: var(--layout--grd-8);
+  }
+
+  &__season {
+    margin-bottom: var(--layout--grd-14);
+  }
+
+  &__episode-cards,
+  &__actor-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
+    gap: 30px;
+    margin: 0 auto;
+    margin-top: var(--layout--grd-4);
+  }
+}
+
+.episode-card,
+.actor-card {
+  height: 350px;
+  overflow: hidden;
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,4 +1,4 @@
-$layout--baseline-grid: 8px !default;
+$layout--baseline-grid: 4px !default;
 
 /*
  Responsive width
@@ -39,6 +39,6 @@ $layout--baseline-grid: 8px !default;
 */
 @mixin gridValues {
   @for $i from 1 through 30 {
-    --layout--grd-#{$i}: #{8 * $i}px;
+    --layout--grd-#{$i}: #{4 * $i}px;
   }
 }

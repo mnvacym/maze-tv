@@ -1,0 +1,84 @@
+@use 'sass:color';
+
+$color-shade-lighter: 30%;
+$color-shade-lightest: 85%;
+$color-shade-darker: 30%;
+$color-shade-darkest: 45%;
+
+$color-primary-lighter: color.mix(#fff, $color-primary, $color-shade-lighter);
+$color-primary-lightest: color.mix(#fff, $color-primary, $color-shade-lightest);
+$color-primary-darker: color.mix(#000, $color-primary, $color-shade-darker);
+$color-primary-darkest: color.mix(#000, $color-primary, $color-shade-darkest);
+
+$color-secondary-lighter: color.mix(
+  #fff,
+  $color-secondary,
+  $color-shade-lighter
+);
+$color-secondary-lightest: color.mix(
+  #fff,
+  $color-secondary,
+  $color-shade-lightest
+);
+$color-secondary-darker: color.mix(#000, $color-secondary, $color-shade-darker);
+$color-secondary-darkest: color.mix(
+  #000,
+  $color-secondary,
+  $color-shade-darkest
+);
+
+$color-accent-lighter: color.mix(#fff, $color-accent, $color-shade-lighter);
+$color-accent-lightest: color.mix(#fff, $color-accent, $color-shade-lightest);
+$color-accent-darker: color.mix(#000, $color-accent, $color-shade-darker);
+$color-accent-darkest: color.mix(#000, $color-accent, $color-shade-darkest);
+
+$color-success-lighter: color.mix(#fff, $color-success, $color-shade-lighter);
+$color-success-lightest: color.mix(#fff, $color-success, $color-shade-lightest);
+$color-success-darker: color.mix(#000, $color-success, $color-shade-darker);
+$color-success-darkest: color.mix(#000, $color-success, $color-shade-darkest);
+
+$color-danger-lighter: color.mix(#fff, $color-danger, $color-shade-lighter);
+$color-danger-lightest: color.mix(#fff, $color-danger, $color-shade-lightest);
+$color-danger-darker: color.mix(#000, $color-danger, $color-shade-darker);
+$color-danger-darkest: color.mix(#000, $color-danger, $color-shade-darkest);
+
+$color-warning-lighter: color.mix(#fff, $color-warning, $color-shade-lighter);
+$color-warning-lightest: color.mix(#fff, $color-warning, $color-shade-lightest);
+$color-warning-darker: color.mix(#000, $color-warning, $color-shade-darker);
+$color-warning-darkest: color.mix(#000, $color-warning, $color-shade-darkest);
+
+$color-info-lighter: color.mix(#fff, $color-info, $color-shade-lighter);
+$color-info-lightest: color.mix(#fff, $color-info, $color-shade-lightest);
+$color-info-darker: color.mix(#000, $color-info, $color-shade-darker);
+$color-info-darkest: color.mix(#000, $color-info, $color-shade-darkest);
+
+%color-shade-vars {
+  --color-primary-lightest: #{$color-primary-lightest};
+  --color-primary-lighter: #{$color-primary-lighter};
+  --color-primary-darker: #{$color-primary-darker};
+  --color-primary-darkest: #{$color-primary-darkest};
+  --color-secondary-lightest: #{$color-secondary-lightest};
+  --color-secondary-lighter: #{$color-secondary-lighter};
+  --color-secondary-darker: #{$color-secondary-darker};
+  --color-secondary-darkest: #{$color-secondary-darkest};
+  --color-accent-lighter: #{$color-accent-lighter};
+  --color-accent-lightest: #{$color-accent-lightest};
+  --color-accent-darker: #{$color-accent-darker};
+  --color-accent-darkest: #{$color-accent-darkest};
+  --color-success-lighter: #{$color-success-lighter};
+  --color-success-lightest: #{$color-success-lightest};
+  --color-success-darker: #{$color-success-darker};
+  --color-success-darkest: #{$color-success-darkest};
+  --color-danger-lighter: #{$color-danger-lighter};
+  --color-danger-lightest: #{$color-danger-lightest};
+  --color-danger-darker: #{$color-danger-darker};
+  --color-danger-darkest: #{$color-danger-darkest};
+  --color-warning-lighter: #{$color-warning-lighter};
+  --color-warning-lightest: #{$color-warning-lightest};
+  --color-warning-darker: #{$color-warning-darker};
+  --color-warning-darkest: #{$color-warning-darkest};
+  --color-info-lighter: #{$color-info-lighter};
+  --color-info-lightest: #{$color-info-lightest};
+  --color-info-darker: #{$color-info-darker};
+  --color-info-darkest: #{$color-info-darkest};
+}

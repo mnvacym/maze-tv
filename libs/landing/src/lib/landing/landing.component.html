@@ -4,6 +4,7 @@
     <div class="genre__shows">
       <mat-card
         *ngFor="let show of tvShows$ | async | filterByGenre: genre"
+        (click)="navigateToDetails(show.id)"
         class="tv-show-card"
       >
         <mat-card-header>

@@ -1,0 +1,28 @@
+$color-primary: #0062c4;
+$color-secondary: #181e41;
+$color-accent: #f2780c;
+$color-success: #2e7d32;
+$color-danger: #d32f2f;
+$color-warning: #fbc02d;
+$color-info: #1476cc;
+$color-background: #607d8b54;
+$scrollBarTrackColor: #e1e1e1;
+$scrollBarThumbColor: #363636;
+$scrollBarThumbActiveColor: #636363;
+$textLight: #f8f8f8;
+$textMedium: #54595d;
+$textDark: #181a20;
+
+%color-vars {
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-accent: #{$color-accent};
+  --color-success: #{$color-success};
+  --color-danger: #{$color-danger};
+  --color-warning: #{$color-warning};
+  --color-info: #{$color-info};
+  --color-background: #{$color-background};
+  --color-text-light: #{$textLight};
+  --color-text-medium: #{$textMedium};
+  --color-text-dark: #{$textDark};
+}

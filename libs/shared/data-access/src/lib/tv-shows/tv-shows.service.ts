@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { EnvironmentConfig, ENV_CONFIG } from '../env-config';
-import { TvShow } from '../types';
+import { Actor, Episode, Season, TvShow } from '../types';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,38 @@ export class TvShowsService {
    */
   getAllTvShows(): Observable<TvShow[]> {
     return this.httpClient.get<TvShow[]>(this.apiUrl);
+  }
+
+  /**
+   * @description Gets tv show object based on id
+   * @param id id of the tv show
+   */
+  getTvShowById(id: number): Observable<TvShow> {
+    return this.httpClient.get<TvShow>(`${this.apiUrl}/${id}`);
+  }
+
+  /**
+   * @description Gets seasons for a specific tv show
+   * @param id id of the tv show
+   */
+  getSeasonsByTvShow(id: number): Observable<Season[]> {
+    return this.httpClient.get<Season[]>(`${this.apiUrl}/${id}/seasons`);
+  }
+
+  /**
+   * @description Gets episodes for a specific tv show
+   * @param id id of the tv show
+   */
+  getEpisodesByTvShow(id: number): Observable<Episode[]> {
+    return this.httpClient.get<Episode[]>(`${this.apiUrl}/${id}/episodes`);
+  }
+
+  /**
+   * @description Gets cast for a specific tv show
+   * @param id id of the tv show
+   */
+  getCastByTvShow(id: number): Observable<Actor[]> {
+    return this.httpClient.get<Actor[]>(`${this.apiUrl}/${id}/cast`);
   }
 
   /**
