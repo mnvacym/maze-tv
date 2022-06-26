@@ -33,6 +33,7 @@ To set a standardized consistent way of development, some helper tools such as `
 - After installing packages with `yarn` you can serve the app with `yarn start`
 - To run unit tests run `yarn test`
 - To run e2e tests run `yarn e2e:tv-shows`
+- Her is the deployed version https://maze-tv.netlify.app/
 
 ## Remarks about the architectural decisions
 
