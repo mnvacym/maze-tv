@@ -2,10 +2,10 @@ import { fakeAsync, flush } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { Router } from '@angular/router';
-import { TvShow } from '@maze-tv/shared/data-access';
 import { createComponentFactory, Spectator } from '@ngneat/spectator/jest';
 import { Observable, of } from 'rxjs';
 import { SearchBoxComponent } from './search-box.component';
+import { TvShow } from '@maze-tv/shared/utils';
 
 describe('SearchBoxComponent', () => {
   let spectator: Spectator<SearchBoxComponent>;

@@ -3,7 +3,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-import { TvShow, TvShowsService } from '@maze-tv/shared/data-access';
+import { TvShowsService } from '@maze-tv/shared/data-access';
+import { TvShow } from '@maze-tv/shared/utils';
 
 @Component({
   selector: 'maze-tv-landing',

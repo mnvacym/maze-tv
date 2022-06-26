@@ -32,7 +32,7 @@ module.exports = {
       [
         'build',
         'ci',
-        'chore',
+        'core',
         'docs',
         'feat',
         'fix',

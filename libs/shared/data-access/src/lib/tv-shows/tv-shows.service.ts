@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { Actor, Episode, Season, TvShow } from '@maze-tv/shared/utils';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { EnvironmentConfig, ENV_CONFIG } from '../env-config';
-import { Actor, Episode, Season, TvShow } from '../types';
+import { EnvironmentConfig, ENV_CONFIG } from '../../env-config';
 
 @Injectable({
   providedIn: 'root'

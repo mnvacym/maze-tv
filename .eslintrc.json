@@ -13,6 +13,50 @@
             "allow": [],
             "depConstraints": [
               {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "scope:landing",
+                "onlyDependOnLibsWithTags": ["scope:shared", "scope:landing"]
+              },
+              {
+                "sourceTag": "scope:show-details",
+                "onlyDependOnLibsWithTags": [
+                  "scope:shared",
+                  "scope:show-details"
+                ]
+              },
+              {
+                "sourceTag": "type:utils",
+                "onlyDependOnLibsWithTags": ["type:utils"]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:utils", "type:ui"]
+              },
+              {
+                "sourceTag": "type:data-access",
+                "onlyDependOnLibsWithTags": ["type:utils", "type:data-access"]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:utils",
+                  "type:data-access",
+                  "type:ui"
+                ]
+              },
+              {
+                "sourceTag": "type:app",
+                "onlyDependOnLibsWithTags": [
+                  "type:utils",
+                  "type:data-access",
+                  "type:ui",
+                  "type:feature"
+                ]
+              },
+              {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
               }

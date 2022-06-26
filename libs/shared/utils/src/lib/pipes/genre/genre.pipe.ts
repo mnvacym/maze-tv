@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { TvShow } from '@maze-tv/shared/data-access';
+import { TvShow } from '../../../types';
 
 @Pipe({
   name: 'filterByGenre',

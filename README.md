@@ -23,17 +23,18 @@ To set a standardized consistent way of development, some helper tools such as `
 │       │   ├── nav-bar
 │       │   └── search-box
 │       └── utils
+│           ├── types
 │           └── pipes
 └── ...
 ```
 
 ## Quick start
 
-- After installing packages with `yarn` you can serve the app with `ng serve`
+- After installing packages with `yarn` you can serve the app with `yarn start`
 - To run unit tests run `yarn test`
 - To run e2e tests run `yarn e2e:tv-shows`
 
-## Some remarks about the architectural decisions
+## Remarks about the architectural decisions
 
 - 🚀 I chose mono repo setup with Nx,
   - Makes following DDD (Domain Driven Design) principles easier using module boundaries
@@ -57,6 +58,8 @@ To set a standardized consistent way of development, some helper tools such as `
 
 - Run `yarn dep-graph` to see a diagram of the dependencies
 
+<p><img src="./apps/tv-shows/src/assets/dep-graph.png" width="450"></p>
+
 ## Commit format
 
 There is a commit linter. Only certain commit formats will be accepted:
@@ -71,9 +74,9 @@ feat(general): add feature X for movie component
  │     │                │
  │     │                └───> Summary in present tense.
  │     │
- │     └────────────────────> Scope: shared, general.
+ │     └────────────────────> Scope: tv-shows, tv-shows-e2e, show-details, landing, data-access, ui, utils, shared, general.
  │
- └──────────────────────────> Type: build, ci, chore, docs, feat, fix, perf, refactor, revert, style, test, version.
+ └──────────────────────────> Type: build, ci, core, docs, feat, fix, perf, refactor, revert, style, test, version.
 ```
 
 More Examples:
@@ -84,7 +87,7 @@ More Examples:
 - `style`: (formatting, missing semi colons, etc; no production code change)
 - `refactor`: (refactoring production code, eg. renaming a variable)
 - `test`: (adding missing tests, refactoring tests; no production code change)
-- `chore`: (updating grunt tasks etc; no production code change)
+- `core`: (updating grunt tasks etc; no production code change)
 
 References:
 

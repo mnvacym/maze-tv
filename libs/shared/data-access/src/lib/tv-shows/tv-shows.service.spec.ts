@@ -3,9 +3,9 @@ import {
   HttpTestingController
 } from '@angular/common/http/testing';
 import { InjectionToken } from '@angular/core';
+import { TvShow, Season, Episode, Actor } from '@maze-tv/shared/utils';
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
-import { EnvironmentConfig, ENV_CONFIG } from '../env-config';
-import { Actor, Episode, Season, TvShow } from '../types';
+import { EnvironmentConfig, ENV_CONFIG } from '../../env-config';
 import { TvShowsService } from './tv-shows.service';
 
 describe('TvShowsService', () => {

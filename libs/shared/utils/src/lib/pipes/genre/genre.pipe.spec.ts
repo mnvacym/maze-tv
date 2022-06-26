@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TvShow } from '@maze-tv/shared/data-access';
 import { SpectatorPipe, createPipeFactory } from '@ngneat/spectator/jest';
+import { TvShow } from '../../../types';
 import { FilterByGenrePipe } from './genre.pipe';
 
 @Component({

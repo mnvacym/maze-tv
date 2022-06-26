@@ -41,7 +41,7 @@
           }
         }
       },
-      "tags": ["feature"]
+      "tags": ["type:feature", "scope:landing"]
     },
     "shared-data-access": {
       "projectType": "library",
@@ -83,7 +83,7 @@
           }
         }
       },
-      "tags": ["data-access"]
+      "tags": ["type:data-access", "scope:shared"]
     },
     "shared-ui": {
       "projectType": "library",
@@ -125,7 +125,7 @@
           }
         }
       },
-      "tags": ["ui"]
+      "tags": ["type:ui", "scope:shared"]
     },
     "shared-utils": {
       "projectType": "library",
@@ -167,7 +167,7 @@
           }
         }
       },
-      "tags": ["utils"]
+      "tags": ["type:utils", "scope:shared"]
     },
     "show-details": {
       "projectType": "library",
@@ -209,7 +209,7 @@
           }
         }
       },
-      "tags": ["feature"]
+      "tags": ["type:feature", "scope:show-details"]
     },
     "tv-shows": {
       "$schema": "../../node_modules/nx/schemas/project-schema.json",
@@ -251,8 +251,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "80kb",
+                  "maximumError": "100kb"
                 }
               ],
               "fileReplacements": [
@@ -310,7 +310,7 @@
           }
         }
       },
-      "tags": []
+      "tags": ["type:app"]
     },
     "tv-shows-e2e": {
       "$schema": "../../node_modules/nx/schemas/project-schema.json",

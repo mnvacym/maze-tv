@@ -1,12 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {
-  Actor,
-  Episode,
-  Season,
-  TvShow,
-  TvShowsService
-} from '@maze-tv/shared/data-access';
+import { TvShowsService } from '@maze-tv/shared/data-access';
+import { Actor, Episode, Season, TvShow } from '@maze-tv/shared/utils';
 import { Observable } from 'rxjs';
 
 @Component({
