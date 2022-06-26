@@ -11,6 +11,7 @@ module.exports = {
       'always',
       [
         'tv-shows',
+        'tv-shows-e2e',
         'show-details',
         'general',
         'shared',

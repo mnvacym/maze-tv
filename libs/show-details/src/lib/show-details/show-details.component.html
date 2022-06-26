@@ -6,15 +6,24 @@
         class="details__image"
         alt="Cover image"
       />
-      <h1 class="details__title">{{ show.name }}</h1>
+      <h1 class="details__title 🤖-show-title">{{ show.name }}</h1>
       <div class="details__meta-data">
-        <span *ngFor="let genre of show.genres" class="details__genre">{{
-          genre | titlecase
-        }}</span>
-        <span class="details__rating">Rating: {{ show.rating.average }}</span>
-        <span class="details__language">Language: {{ show.language }}</span>
+        <span
+          *ngFor="let genre of show.genres"
+          class="details__genre 🤖-show-genre"
+          >{{ genre | titlecase }}</span
+        >
+        <span class="details__rating 🤖-show-rating"
+          >Rating: {{ show.rating.average }}</span
+        >
+        <span class="details__language 🤖-show-language"
+          >Language: {{ show.language }}</span
+        >
       </div>
-      <div [innerHTML]="show.summary" class="details__summary"></div>
+      <div
+        [innerHTML]="show.summary"
+        class="details__summary 🤖-show-summary"
+      ></div>
     </div>
 
     <div class="details__tab-group">
@@ -23,7 +32,7 @@
           <div class="details__seasons-wrapper">
             <div
               *ngFor="let season of seasons$ | async"
-              class="details__season"
+              class="details__season 🤖-show-seasons"
             >
               <h2>Season {{ season.number }}</h2>
               <div class="details__episode-cards">
@@ -33,7 +42,7 @@
                       | async
                       | filterBySeason: season.number
                   "
-                  class="episode-card"
+                  class="episode-card 🤖-show-episodes"
                 >
                   <mat-card-header>
                     <mat-card-title
@@ -58,7 +67,10 @@
         </mat-tab>
         <mat-tab label="Cast">
           <div class="details__actor-cards">
-            <mat-card *ngFor="let actor of cast$ | async" class="actor-card">
+            <mat-card
+              *ngFor="let actor of cast$ | async"
+              class="actor-card 🤖-cast-card"
+            >
               <mat-card-header>
                 <mat-card-title>{{ actor.person.name }}</mat-card-title>
                 <mat-card-subtitle

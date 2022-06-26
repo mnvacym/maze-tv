@@ -5,6 +5,7 @@
   "scripts": {
     "build": "nx build",
     "dep-graph": "nx dep-graph",
+    "e2e:tv-shows": "nx e2e tv-shows-e2e",
     "format": "nx format:write",
     "format:check": "nx format:check",
     "format:write": "nx format:write",

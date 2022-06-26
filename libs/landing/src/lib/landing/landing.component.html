@@ -1,13 +1,16 @@
 <div class="landing-page-container">
-  <maze-tv-search-box [tvShows$]="tvShows$"></maze-tv-search-box>
+  <maze-tv-search-box
+    [tvShows$]="tvShows$"
+    class="🤖-search-box"
+  ></maze-tv-search-box>
 
   <div *ngFor="let genre of genres$ | async" class="genre">
-    <h2 class="genre__title">{{ genre }}</h2>
+    <h2 class="genre__title 🤖-genre-title">{{ genre }}</h2>
     <div class="genre__shows">
       <mat-card
         *ngFor="let show of tvShows$ | async | filterByGenre: genre"
         (click)="navigateToDetails(show.id)"
-        class="tv-show-card"
+        class="tv-show-card 🤖-tv-show-card"
       >
         <mat-card-header>
           <mat-card-title>{{ show.name }}</mat-card-title>

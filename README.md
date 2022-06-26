@@ -12,7 +12,7 @@ To set a standardized consistent way of development, some helper tools such as `
 ├── ...
 ├── apps                    # All the apps live in apps directory
 │   ├── tv-shows            # Tv Shows app
-│   └── ...
+│   └── tv-shows-e2e        # Tv Shows e2e testing app
 │
 ├── libs                    # All the libs live in libs directory
 │   ├── landing
@@ -20,22 +20,27 @@ To set a standardized consistent way of development, some helper tools such as `
 │   └── shared
 │       ├── data-access
 │       ├── ui
+│       │   ├── nav-bar
+│       │   └── search-box
 │       └── utils
+│           └── pipes
 └── ...
 ```
 
 ## Quick start
 
-- After installing packages with `yarn` you can serve the app with `ng serve`.
-- To run unit tests run `yarn test`.
+- After installing packages with `yarn` you can serve the app with `ng serve`
+- To run unit tests run `yarn test`
+- To run e2e tests run `yarn e2e:tv-shows`
 
 ## Some remarks about the architectural decisions
 
 - 🚀 I chose mono repo setup with Nx,
-  - Makes following DDD (Domain Driven Design) principles easier
-  - Better in case I need to add more apps to the same repo
+  - Makes following DDD (Domain Driven Design) principles easier using module boundaries
+  - In case I need to add more apps to the same repo
   - Nx provides computation caching, which makes builds and tests run much faster
-  - Uses Jest for unit testing
+  - Provides Jest as first class citizen for unit testing
+  - Provides Cypress as first class citizen for e2e testing
 - 🤓 I used yarn because it is slightly faster than npm
 - 🛡 Used htmlhint and added some rules, like preventing Reverse Tabnabbing etc.
 - 🚦 Used some helper linting and formatting tools to keep the quality of code and commits high
@@ -46,6 +51,7 @@ To set a standardized consistent way of development, some helper tools such as `
 - 🛫 I used spectator for a better unit testing experience
 - 🏎 Used OnPush change detection strategy for components for a better performance
 - Created reusable pipes for filtering tv shows by genre and season
+- I added class names starting with 🤖 icons for e2e testing. This is to make it easier in the future if I want to make changes to e2e tests
 
 ## Understand the workspace
 

@@ -10,6 +10,7 @@
       matInput
       [formControl]="searchInput"
       [matAutocomplete]="auto"
+      class="🤖-search-box-input"
     />
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
       <mat-option
@@ -17,7 +18,7 @@
         [value]="show.name"
         (onSelectionChange)="onSelect(show.id)"
       >
-        <div class="search-result">
+        <div class="search-result 🤖-search-result">
           <img
             [src]="show.image.medium"
             alt="Image of tv show"
