@@ -1,0 +1,31 @@
+<form class="search-box">
+  <mat-form-field class="search-form-field" appearance="fill">
+    <mat-label class="search-box-label">
+      <mat-icon class="search-icon">search</mat-icon> Search for a
+      show</mat-label
+    >
+    <input
+      type="text"
+      aria-label="Show"
+      matInput
+      [formControl]="searchInput"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option
+        *ngFor="let show of filteredTvShows$ | async"
+        [value]="show.name"
+        (onSelectionChange)="onSelect(show.id)"
+      >
+        <div class="search-result">
+          <img
+            [src]="show.image.medium"
+            alt="Image of tv show"
+            class="search-result__image"
+          />
+          {{ show.name }}
+        </div>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

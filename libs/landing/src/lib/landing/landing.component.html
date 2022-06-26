@@ -1,4 +1,6 @@
 <div class="landing-page-container">
+  <maze-tv-search-box [tvShows$]="tvShows$"></maze-tv-search-box>
+
   <div *ngFor="let genre of genres$ | async" class="genre">
     <h2 class="genre__title">{{ genre }}</h2>
     <div class="genre__shows">

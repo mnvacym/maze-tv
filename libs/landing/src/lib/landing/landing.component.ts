@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 import { TvShow, TvShowsService } from '@maze-tv/shared/data-access';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'maze-tv-landing',
@@ -12,8 +12,8 @@ import { map } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingComponent implements OnInit {
-  tvShows$: Observable<TvShow[]> | undefined;
-  genres$: Observable<string[]> | undefined;
+  tvShows$!: Observable<TvShow[]>;
+  genres$!: Observable<string[]>;
 
   constructor(private router: Router, private tvShowsService: TvShowsService) {}
 

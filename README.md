@@ -41,9 +41,10 @@ To set a standardized consistent way of development, some helper tools such as `
 - 🚦 Used some helper linting and formatting tools to keep the quality of code and commits high
 - 🔨 Added github actions for a simple ci/cd pipeline
 - 💄 Created my own theme extending angular material theming, ans used Angular Material component library for a consistent look across the app
-- Mobile first approach is followed for better user experience
+- 📱 Mobile first approach is followed for better user experience
+  - Created custom breakpoints with mixins for consistent responsive design
 - 🛫 I used spectator for a better unit testing experience
-- Used OnPush change detection strategy for components for a better performance
+- 🏎 Used OnPush change detection strategy for components for a better performance
 - Created reusable pipes for filtering tv shows by genre and season
 
 ## Understand the workspace

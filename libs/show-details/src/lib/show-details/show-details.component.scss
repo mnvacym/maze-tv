@@ -9,22 +9,30 @@
     width: 80%;
     padding: var(--layout--grd-8);
   }
+
+  @include larger-than-lg() {
+    width: 1170px;
+    padding: var(--layout--grd-8);
+  }
 }
 
 .details {
   &__image {
-    width: 100%;
-    margin-bottom: var(--layout--grd-8);
+    width: 40%;
+    margin-right: var(--layout--grd-4);
+    margin-bottom: var(--layout--grd-2);
+    float: left;
 
     @include larger-than-xs() {
       width: 500px;
       margin-right: var(--layout--grd-8);
-      float: left;
+      margin-bottom: var(--layout--grd-4);
     }
   }
 
   &__title {
     margin-bottom: var(--layout--grd-2);
+    font-size: 1.5rem;
 
     @include larger-than-xs() {
       margin-bottom: var(--layout--grd-4);
@@ -46,10 +54,11 @@
   &__language {
     flex-grow: 0;
     flex-shrink: 0;
-    margin-right: var(--layout--grd-2);
+    margin-right: var(--layout--grd-1);
     margin-bottom: var(--layout--grd-2);
     padding: var(--layout--grd-1) var(--layout--grd-2);
     border-radius: 4px;
+    font-size: 10px;
 
     @include larger-than-xs() {
       font-size: 12px;
@@ -73,13 +82,7 @@
 
   &__summary {
     margin-bottom: var(--layout--grd-8);
-    font-size: 1.5rem;
-    line-height: 2rem;
-
-    @include larger-than-xs() {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
+    line-height: 1.5rem;
   }
 
   &__tab-group {
